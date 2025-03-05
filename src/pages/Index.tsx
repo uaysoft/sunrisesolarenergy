@@ -21,8 +21,8 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-10" />
           <LazyImage
-            src="/public/lovable-uploads/28b6225c-bc61-4b72-b8ae-1a8c9ea5a621.png"
-            alt="Solar Panels"
+            src="/public/lovable-uploads/1fc0898c-6af5-475c-b5b4-f43348b3c22f.png"
+            alt="Solar Panel Installation"
             imgClassName="w-full h-full object-cover"
           />
         </div>
