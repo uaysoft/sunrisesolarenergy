@@ -7,13 +7,24 @@ interface LazyImageProps {
   className?: string;
   imgClassName?: string;
   priority?: boolean;
+  objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down';
 }
 
-const LazyImage = ({ src, alt, className = '', imgClassName = '', priority = false }: LazyImageProps) => {
+const LazyImage = ({ 
+  src, 
+  alt, 
+  className = '', 
+  imgClassName = '', 
+  priority = false,
+  objectFit = 'cover'
+}: LazyImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isVisible, setIsVisible] = useState(priority);
   const [imageRef, setImageRef] = useState<HTMLDivElement | null>(null);
   const [error, setError] = useState(false);
+
+  // Fix image paths that include public/ prefix
+  const imageSrc = src.startsWith('/public/') ? src.replace('/public/', '/') : src;
 
   useEffect(() => {
     // If image is priority, skip intersection observer
@@ -45,9 +56,12 @@ const LazyImage = ({ src, alt, className = '', imgClassName = '', priority = fal
   };
 
   const handleError = () => {
+    console.error(`Failed to load image: ${imageSrc}`);
     setError(true);
     setIsLoaded(true); // Consider the loading as done even if it's an error
   };
+
+  const objectFitClass = `object-${objectFit}`;
 
   return (
     <div
@@ -56,9 +70,9 @@ const LazyImage = ({ src, alt, className = '', imgClassName = '', priority = fal
     >
       {(isVisible || isLoaded) && !error && (
         <img
-          src={src}
+          src={imageSrc}
           alt={alt}
-          className={`${imgClassName} transition-opacity duration-500 ${
+          className={`${imgClassName} ${objectFitClass} transition-opacity duration-500 ${
             isLoaded ? 'opacity-100' : 'opacity-0'
           }`}
           onLoad={handleLoad}
