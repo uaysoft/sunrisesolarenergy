@@ -1,10 +1,12 @@
-
 import { useEffect } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import LazyImage from '@/components/LazyImage';
 import { useTranslationContext } from '../contexts/TranslationContext';
+import PageHero from '@/components/PageHero';
+import ProjectCard from '@/components/ProjectCard';
+import CTASection from '@/components/CTASection';
 
 const Projects = () => {
   const { t } = useTranslationContext();
@@ -80,18 +82,10 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gray-100 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">{t('projects.pageTitle')}</h1>
-            <div className="w-20 h-1 bg-sunrise-500 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 mb-8">
-              {t('projects.pageDescription')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title={t('projects.pageTitle')} 
+        description={t('projects.pageDescription')} 
+      />
 
       {/* Projects Showcase */}
       <section className="py-16">
@@ -113,35 +107,12 @@ const Projects = () => {
               <TabsContent key={category.id} value={category.id} className="mt-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {category.items.map((project, index) => (
-                    <div key={index} className="bg-white rounded-lg overflow-hidden shadow-soft hover:shadow-medium transition-shadow duration-300">
-                      <div className="h-56 overflow-hidden">
-                        <LazyImage
-                          src={project.image}
-                          alt={project.name}
-                          imgClassName="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <div className="p-6">
-                        <div className="flex items-center mb-2">
-                          <span className="bg-sunrise-100 text-sunrise-800 text-xs font-medium px-2.5 py-0.5 rounded">
-                            {category.name}
-                          </span>
-                        </div>
-                        <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-                        <p className="text-gray-600 mb-4">{project.description}</p>
-                        <div className="mb-4">
-                          <h4 className="font-medium text-gray-900 mb-2">{t('projects.keyDetails')}:</h4>
-                          <ul className="list-disc list-inside text-gray-600">
-                            {project.details.map((detail, i) => (
-                              <li key={i}>{detail}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <Button className="bg-sunrise-600 hover:bg-sunrise-700 text-white mt-2">
-                          {t('projects.viewDetails')} <ChevronRight size={16} className="ml-1" />
-                        </Button>
-                      </div>
-                    </div>
+                    <ProjectCard 
+                      key={index} 
+                      project={project} 
+                      categoryName={category.name}
+                      viewDetailsText={t('projects.viewDetails')}
+                    />
                   ))}
                 </div>
               </TabsContent>
@@ -198,18 +169,13 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-sunrise-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">{t('projects.ctaTitle')}</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            {t('projects.ctaText')}
-          </p>
-          <Button size="lg" className="bg-white text-sunrise-600 hover:bg-gray-100">
-            {t('projects.ctaButton')}
-          </Button>
-        </div>
-      </section>
+      <CTASection 
+        title={t('projects.ctaTitle')}
+        text={t('projects.ctaText')}
+        buttonText={t('projects.ctaButton')}
+        className="bg-sunrise-600 text-white"
+        buttonVariant="white"
+      />
     </div>
   );
 };

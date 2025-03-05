@@ -1,11 +1,10 @@
-
 import { useEffect } from 'react';
-import { ChevronRight } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
-import LazyImage from '@/components/LazyImage';
 import { useTranslationContext } from '../contexts/TranslationContext';
+import ProductCard from '@/components/ProductCard';
+import PageHero from '@/components/PageHero';
+import CTASection from '@/components/CTASection';
 
 const Products = () => {
   const { t } = useTranslationContext();
@@ -123,18 +122,10 @@ const Products = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gray-100 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">{t('products.pageTitle')}</h1>
-            <div className="w-20 h-1 bg-sunrise-500 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 mb-8">
-              {t('products.pageDescription')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title={t('products.pageTitle')} 
+        description={t('products.pageDescription')} 
+      />
 
       {/* Products Catalog */}
       <section className="py-16">
@@ -156,30 +147,7 @@ const Products = () => {
               <TabsContent key={category.id} value={category.id} className="mt-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {category.items.map((product, index) => (
-                    <Card key={index} className="overflow-hidden hover:shadow-medium transition-shadow duration-300">
-                      <div className="h-56 overflow-hidden">
-                        <LazyImage
-                          src={product.image}
-                          alt={product.name}
-                          imgClassName="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <CardContent className="p-6">
-                        <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
-                        <p className="text-gray-600 mb-4">{product.description}</p>
-                        <div className="mb-4">
-                          <h4 className="font-medium text-gray-900 mb-2">Specifications:</h4>
-                          <ul className="list-disc list-inside text-gray-600">
-                            {product.specs.map((spec, i) => (
-                              <li key={i}>{spec}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        <Button className="bg-sunrise-600 hover:bg-sunrise-700 text-white mt-2 w-full">
-                          Request Quote <ChevronRight size={16} className="ml-1" />
-                        </Button>
-                      </CardContent>
-                    </Card>
+                    <ProductCard key={index} product={product} />
                   ))}
                 </div>
               </TabsContent>
@@ -188,18 +156,12 @@ const Products = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">{t('products.ctaTitle')}</h2>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            {t('products.ctaText')}
-          </p>
-          <Button size="lg" className="bg-sunrise-600 hover:bg-sunrise-700 text-white px-8">
-            {t('products.ctaButton')}
-          </Button>
-        </div>
-      </section>
+      <CTASection 
+        title={t('products.ctaTitle')}
+        text={t('products.ctaText')}
+        buttonText={t('products.ctaButton')}
+        className="bg-gray-50"
+      />
     </div>
   );
 };
