@@ -41,7 +41,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center">
             <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden">
               <img
-                src="/public/lovable-uploads/ec0e07bf-4edb-4279-b1d9-32ef4413dcba.png"
+                src="/public/lovable-uploads/752393e2-230f-454f-a6c8-6ec570f99e7e.png"
                 alt="Sunrise Logo"
                 className="w-full h-full object-contain"
               />

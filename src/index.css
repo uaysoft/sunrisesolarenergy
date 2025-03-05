@@ -245,3 +245,126 @@ body {
     padding-bottom: 3rem;
   }
 }
+
+/* Mobile responsive improvements */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    font-size: 1.75rem !important;
+  }
+  
+  h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .mobile-py {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  
+  .mobile-px {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  .mobile-stack > * {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  .mobile-center {
+    text-align: center !important;
+  }
+  
+  .mobile-mt {
+    margin-top: 1.5rem !important;
+  }
+  
+  .mobile-mb {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .mobile-grid-1 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Card styling improvements */
+.card-highlight {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.card-highlight:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+/* Content section styling */
+.content-section {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .content-section {
+    padding: 2.5rem 0;
+  }
+}
+
+/* Better button styling */
+.btn-primary {
+  @apply bg-sunrise-600 text-white hover:bg-sunrise-700 transition-colors rounded-md px-4 py-2 inline-flex items-center justify-center;
+}
+
+.btn-secondary {
+  @apply bg-white text-sunrise-600 hover:bg-gray-100 transition-colors border border-sunrise-600 rounded-md px-4 py-2 inline-flex items-center justify-center;
+}
+
+/* Improved aspect ratio containers for images */
+.aspect-ratio-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+.aspect-ratio-1-1 {
+  padding-top: 100%;
+}
+
+.aspect-ratio-4-3 {
+  padding-top: 75%;
+}
+
+.aspect-ratio-16-9 {
+  padding-top: 56.25%;
+}
+
+.aspect-ratio-container > img,
+.aspect-ratio-container > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
