@@ -1,12 +1,10 @@
 import { useEffect } from 'react';
-import { ChevronRight } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import LazyImage from '@/components/LazyImage';
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslationContext } from '../contexts/TranslationContext';
 import PageHero from '@/components/PageHero';
-import ProjectCard from '@/components/ProjectCard';
 import CTASection from '@/components/CTASection';
+import ProjectCategory from '@/components/ProjectCategory';
+import FeaturedProject from '@/components/FeaturedProject';
 
 const Projects = () => {
   const { t } = useTranslationContext();
@@ -80,23 +78,37 @@ const Projects = () => {
     }
   ];
 
+  const featuredProjectStats = [
+    { value: "221 kW", label: "System Size" },
+    { value: "360,000 kWh", label: "Annual Energy Production" },
+    { value: "180 tonnes", label: "Annual CO2 Reduction" },
+    { value: "5 years", label: "Investment Payback Period" }
+  ];
+
   return (
     <div className="min-h-screen">
       <PageHero 
         title={t('projects.pageTitle')} 
-        description={t('projects.pageDescription')} 
+        description={t('projects.pageDescription')}
+        bgColor="bg-gradient-to-b from-sunrise-50 to-white"
       />
 
       {/* Projects Showcase */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <Tabs defaultValue="commercial" className="w-full">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Projects</h2>
+              <div className="w-20 h-1 bg-sunrise-500 mx-auto mb-4"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto">Explore our diverse portfolio of solar installations</p>
+            </div>
+            
             <TabsList className="mb-8 flex flex-wrap justify-center gap-2">
               {projectCategories.map(category => (
                 <TabsTrigger 
                   key={category.id} 
                   value={category.id}
-                  className="px-4 py-2 rounded-md data-[state=active]:bg-sunrise-500 data-[state=active]:text-white"
+                  className="px-4 py-2 rounded-md data-[state=active]:bg-sunrise-500 data-[state=active]:text-white transition-all"
                 >
                   {category.name}
                 </TabsTrigger>
@@ -104,18 +116,13 @@ const Projects = () => {
             </TabsList>
             
             {projectCategories.map(category => (
-              <TabsContent key={category.id} value={category.id} className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {category.items.map((project, index) => (
-                    <ProjectCard 
-                      key={index} 
-                      project={project} 
-                      categoryName={category.name}
-                      viewDetailsText={t('projects.viewDetails')}
-                    />
-                  ))}
-                </div>
-              </TabsContent>
+              <ProjectCategory 
+                key={category.id}
+                id={category.id}
+                name={category.name}
+                items={category.items}
+                viewDetailsText={t('projects.viewDetails')}
+              />
             ))}
           </Tabs>
         </div>
@@ -129,43 +136,12 @@ const Projects = () => {
             <div className="w-20 h-1 bg-sunrise-500 mx-auto mb-6"></div>
           </div>
           
-          <div className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="w-full lg:w-1/2">
-              <LazyImage
-                src="/public/lovable-uploads/9a886edb-4e86-4f4a-b7c7-a35b0e0691ed.png"
-                alt="Sunbelt Group Project"
-                className="rounded-lg overflow-hidden shadow-medium"
-                imgClassName="w-full h-full object-cover"
-              />
-            </div>
-            <div className="w-full lg:w-1/2">
-              <h3 className="text-2xl font-bold mb-4">Sunbelt Group, Kano State</h3>
-              <p className="text-lg text-gray-600 mb-6">
-                This landmark 221 KW Grid-tied PV Project represents one of the largest commercial solar installations in Northern Nigeria, powering a major manufacturing facility while significantly reducing operational costs and carbon emissions.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div className="bg-white p-4 rounded-lg shadow-soft">
-                  <span className="text-2xl font-bold text-sunrise-600">221 kW</span>
-                  <p className="text-gray-600">System Size</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-soft">
-                  <span className="text-2xl font-bold text-sunrise-600">360,000 kWh</span>
-                  <p className="text-gray-600">Annual Energy Production</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-soft">
-                  <span className="text-2xl font-bold text-sunrise-600">180 tonnes</span>
-                  <p className="text-gray-600">Annual CO2 Reduction</p>
-                </div>
-                <div className="bg-white p-4 rounded-lg shadow-soft">
-                  <span className="text-2xl font-bold text-sunrise-600">5 years</span>
-                  <p className="text-gray-600">Investment Payback Period</p>
-                </div>
-              </div>
-              <Button className="bg-sunrise-600 hover:bg-sunrise-700 text-white">
-                Download Case Study <ChevronRight size={16} className="ml-1" />
-              </Button>
-            </div>
-          </div>
+          <FeaturedProject 
+            title="Sunbelt Group, Kano State"
+            image="/public/lovable-uploads/9a886edb-4e86-4f4a-b7c7-a35b0e0691ed.png"
+            description="This landmark 221 KW Grid-tied PV Project represents one of the largest commercial solar installations in Northern Nigeria, powering a major manufacturing facility while significantly reducing operational costs and carbon emissions."
+            stats={featuredProjectStats}
+          />
         </div>
       </section>
 

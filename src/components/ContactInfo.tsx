@@ -3,12 +3,12 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 const ContactInfo = () => {
   return (
-    <div className="bg-white p-8 rounded-lg shadow-soft">
-      <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+    <div className="bg-white p-8 rounded-lg shadow-soft hover:shadow-medium transition-all duration-300">
+      <h3 className="text-2xl font-semibold mb-6 text-gray-900">Contact Information</h3>
       
       <div className="space-y-6">
         <div className="flex items-start">
-          <div className="w-10 h-10 bg-sunrise-100 rounded-full flex items-center justify-center mr-4">
+          <div className="w-10 h-10 bg-sunrise-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
             <MapPin className="text-sunrise-600 h-5 w-5" />
           </div>
           <div>
@@ -22,7 +22,7 @@ const ContactInfo = () => {
         </div>
         
         <div className="flex items-start">
-          <div className="w-10 h-10 bg-sunrise-100 rounded-full flex items-center justify-center mr-4">
+          <div className="w-10 h-10 bg-sunrise-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
             <MapPin className="text-sunrise-600 h-5 w-5" />
           </div>
           <div>
@@ -36,7 +36,7 @@ const ContactInfo = () => {
         </div>
         
         <div className="flex items-start">
-          <div className="w-10 h-10 bg-sunrise-100 rounded-full flex items-center justify-center mr-4">
+          <div className="w-10 h-10 bg-sunrise-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
             <Phone className="text-sunrise-600 h-5 w-5" />
           </div>
           <div>
@@ -49,7 +49,7 @@ const ContactInfo = () => {
         </div>
         
         <div className="flex items-start">
-          <div className="w-10 h-10 bg-sunrise-100 rounded-full flex items-center justify-center mr-4">
+          <div className="w-10 h-10 bg-sunrise-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
             <Mail className="text-sunrise-600 h-5 w-5" />
           </div>
           <div>
@@ -60,15 +60,15 @@ const ContactInfo = () => {
       </div>
       
       <div className="mt-8 pt-8 border-t border-gray-200">
-        <h3 className="text-xl font-semibold mb-4">Our Service Commitment</h3>
+        <h3 className="text-xl font-semibold mb-4 text-gray-900">Our Service Commitment</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-          <div className="p-4 bg-gray-50 rounded-lg">
+          <div className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
             <span className="block text-sunrise-600 font-semibold">Efficient</span>
           </div>
-          <div className="p-4 bg-gray-50 rounded-lg">
+          <div className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
             <span className="block text-green-600 font-semibold">Green</span>
           </div>
-          <div className="p-4 bg-gray-50 rounded-lg">
+          <div className="p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
             <span className="block text-blue-600 font-semibold">Energy Saving</span>
           </div>
         </div>

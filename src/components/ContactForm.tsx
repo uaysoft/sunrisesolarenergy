@@ -113,10 +113,10 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="bg-sunrise-600 hover:bg-sunrise-700 text-white px-6 py-3"
+        className="bg-sunrise-600 hover:bg-sunrise-700 text-white px-6 py-3 group"
       >
         {isSubmitting ? 'Sending...' : 'Send Message'} 
-        <Send className="ml-2 h-4 w-4" />
+        <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
       </Button>
     </form>
   );

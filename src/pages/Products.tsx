@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Button } from '@/components/ui/button';
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslationContext } from '../contexts/TranslationContext';
-import ProductCard from '@/components/ProductCard';
 import PageHero from '@/components/PageHero';
 import CTASection from '@/components/CTASection';
+import ProductCategory from '@/components/ProductCategory';
 
 const Products = () => {
   const { t } = useTranslationContext();
@@ -124,19 +123,26 @@ const Products = () => {
     <div className="min-h-screen">
       <PageHero 
         title={t('products.pageTitle')} 
-        description={t('products.pageDescription')} 
+        description={t('products.pageDescription')}
+        bgColor="bg-gradient-to-b from-sunrise-50 to-white" 
       />
 
       {/* Products Catalog */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <Tabs defaultValue="solar-panels" className="w-full">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Our Products</h2>
+              <div className="w-20 h-1 bg-sunrise-500 mx-auto mb-4"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto">Browse our extensive catalog of high-quality solar products</p>
+            </div>
+            
             <TabsList className="mb-8 flex flex-wrap justify-center gap-2">
               {productCategories.map(category => (
                 <TabsTrigger 
                   key={category.id} 
                   value={category.id}
-                  className="px-4 py-2 rounded-md data-[state=active]:bg-sunrise-500 data-[state=active]:text-white"
+                  className="px-4 py-2 rounded-md data-[state=active]:bg-sunrise-500 data-[state=active]:text-white transition-all"
                 >
                   {category.name}
                 </TabsTrigger>
@@ -144,13 +150,11 @@ const Products = () => {
             </TabsList>
             
             {productCategories.map(category => (
-              <TabsContent key={category.id} value={category.id} className="mt-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {category.items.map((product, index) => (
-                    <ProductCard key={index} product={product} />
-                  ))}
-                </div>
-              </TabsContent>
+              <ProductCategory 
+                key={category.id}
+                id={category.id}
+                items={category.items}
+              />
             ))}
           </Tabs>
         </div>
