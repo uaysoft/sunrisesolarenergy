@@ -31,7 +31,7 @@ const Contact = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Reach Out To Us</h2>
             <div className="w-20 h-1 bg-sunrise-500 mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We're here to answer any questions you might have about our solar solutions
+              We're here to answer any questions you might have about our solar solutions and help you find the perfect system for your needs
             </p>
           </div>
           
@@ -50,6 +50,13 @@ const Contact = () => {
       {/* Map Section */}
       <section className="py-8">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Location</h2>
+            <div className="w-16 h-1 bg-sunrise-500 mx-auto mb-4"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+              Visit our office in Kano State, Nigeria
+            </p>
+          </div>
           <MapSection 
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124963.97876563713!2d8.451756871936476!3d11.995558287323305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11ae8286b3a7a153%3A0x3f66886204c8fe8d!2sKano%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1684327137398!5m2!1sen!2sus"
             title="Sunrise Solar Location"
@@ -64,7 +71,7 @@ const Contact = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Turnkey Solutions</h2>
             <div className="w-20 h-1 bg-sunrise-500 mx-auto mb-6"></div>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              From initial consultation to installation and beyond, we provide comprehensive solar solutions
+              From initial consultation to installation and beyond, we provide comprehensive solar solutions tailored to your specific requirements
             </p>
           </div>
           <TurnkeyService />

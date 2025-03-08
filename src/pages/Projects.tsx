@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslationContext } from '../contexts/TranslationContext';
@@ -18,7 +19,7 @@ const Projects = () => {
   const projectCategories = [
     {
       id: "commercial",
-      name: t('projects.categories.commercial'),
+      name: "Commercial",
       items: [
         {
           name: "Retail Store, Kano State",
@@ -42,7 +43,7 @@ const Projects = () => {
     },
     {
       id: "residential",
-      name: t('projects.categories.residential'),
+      name: "Residential",
       items: [
         {
           name: "Private Residence, Lagos",
@@ -60,7 +61,7 @@ const Projects = () => {
     },
     {
       id: "agricultural",
-      name: t('projects.categories.agricultural'),
+      name: "Agricultural",
       items: [
         {
           name: "Farm Irrigation System, Northern Nigeria",
@@ -88,8 +89,8 @@ const Projects = () => {
   return (
     <div className="min-h-screen">
       <PageHero 
-        title={t('projects.pageTitle')} 
-        description={t('projects.pageDescription')}
+        title="Our Projects" 
+        description="Discover our successful solar installations across Nigeria and beyond"
         bgColor="bg-gradient-to-b from-sunrise-50 to-white"
       />
 
@@ -121,7 +122,7 @@ const Projects = () => {
                 id={category.id}
                 name={category.name}
                 items={category.items}
-                viewDetailsText={t('projects.viewDetails')}
+                viewDetailsText="View Details"
               />
             ))}
           </Tabs>
@@ -132,7 +133,7 @@ const Projects = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('projects.featuredTitle')}</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Featured Project</h2>
             <div className="w-20 h-1 bg-sunrise-500 mx-auto mb-6"></div>
           </div>
           
@@ -146,9 +147,9 @@ const Projects = () => {
       </section>
 
       <CTASection 
-        title={t('projects.ctaTitle')}
-        text={t('projects.ctaText')}
-        buttonText={t('projects.ctaButton')}
+        title="Ready to Start Your Solar Project?" 
+        text="Our team of experts is ready to help you design and implement a solar solution tailored to your specific needs."
+        buttonText="Contact Us Today"
         className="bg-sunrise-600 text-white"
         buttonVariant="white"
       />

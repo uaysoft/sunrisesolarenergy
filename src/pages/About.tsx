@@ -70,10 +70,10 @@ const About = () => {
 
   const companyDescription = (
     <>
-      <p className="text-lg">
+      <p className="text-lg mb-4">
         Sunrise New Energy Technology Co., Ltd. (hereafter "SUNRISE"), incorporated in Kano State, Nigeria, is dedicated to delivering all-encompassing one-stop solar solutions for both residential and commercial & industrial (C&I) sectors across Nigeria.
       </p>
-      <p className="text-lg">
+      <p className="text-lg mb-4">
         Its parent company, Shandong Longguang Tianxu Solar Energy Co., Ltd. (abbreviated as "Tanso"), is a global leader in advanced solar solutions. Tanso, with its advanced technologies and rich experience, paves the way for SUNRISE to play a significant role in the Nigerian solar energy market.
       </p>
       <p className="text-lg">
@@ -108,6 +108,9 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Qualifications and Honors</h2>
             <div className="w-20 h-1 bg-sunrise-500 mx-auto mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+              Our parent company has received numerous accolades and certifications for excellence in solar technology
+            </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -126,14 +129,14 @@ const About = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Services</h2>
               <div className="w-20 h-1 bg-sunrise-500 mb-8"></div>
               
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <ServicesList 
-                  title="Pre-sales"
+                  title="Pre-sales Services"
                   items={preSalesServices}
                 />
                 
                 <ServicesList 
-                  title="After-sales"
+                  title="After-sales Services"
                   items={afterSalesServices}
                 />
               </div>
@@ -151,7 +154,7 @@ const About = () => {
                 <p className="text-gray-700 mb-4">
                   Shandong Longguang Tianxu Solar Energy Co., Ltd. (abbreviated as "Tanso") is a global leader in advanced solar solutions with extensive experience and technological expertise.
                 </p>
-                <ul className="space-y-2 text-gray-700">
+                <ul className="space-y-3 text-gray-700">
                   <li className="flex items-center">
                     <div className="w-2 h-2 bg-sunrise-500 rounded-full mr-2"></div>
                     <span>Industry-leading manufacturing facility</span>

@@ -114,33 +114,45 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({ childr
       en: 'Complete Solar Energy Solutions', 
       zh: '完整的太阳能解决方案' 
     },
-    'products.panel': { 
-      en: 'Solar Panel', 
+    'products.pageTitle': { 
+      en: 'Our Products', 
+      zh: '我们的产品' 
+    },
+    'products.pageDescription': { 
+      en: 'Explore our comprehensive range of high-quality solar energy products', 
+      zh: '探索我们全面的高质量太阳能产品' 
+    },
+    'products.categories.panels': { 
+      en: 'Solar Panels', 
       zh: '太阳能电池板' 
     },
-    'products.cabinet': { 
-      en: 'PV-ESS Integrated Cabinet', 
-      zh: 'PV-ESS一体化柜' 
-    },
-    'products.pump': { 
-      en: 'PV Water Pump', 
-      zh: '光伏水泵' 
-    },
-    'products.battery': { 
-      en: 'Energy Storage Battery', 
+    'products.categories.batteries': { 
+      en: 'Energy Storage Batteries', 
       zh: '储能电池' 
     },
-    'products.inverter': { 
-      en: 'Inverter', 
+    'products.categories.inverters': { 
+      en: 'Inverters', 
       zh: '逆变器' 
     },
-    'products.rack': { 
-      en: 'Cable Rack', 
-      zh: '电缆架' 
+    'products.categories.pumps': { 
+      en: 'Solar Water Pumps', 
+      zh: '太阳能水泵' 
     },
-    'products.viewAll': { 
-      en: 'View All Products', 
-      zh: '查看所有产品' 
+    'products.categories.accessories': { 
+      en: 'Accessories', 
+      zh: '配件' 
+    },
+    'products.ctaTitle': { 
+      en: 'Ready to Transform Your Energy Supply?', 
+      zh: '准备好转变您的能源供应了吗？' 
+    },
+    'products.ctaText': { 
+      en: 'Contact our team today to discuss how our solar products can meet your energy needs and help you save costs.', 
+      zh: '立即联系我们的团队，讨论我们的太阳能产品如何满足您的能源需求并帮助您节省成本。' 
+    },
+    'products.ctaButton': { 
+      en: 'Get a Quote', 
+      zh: '获取报价' 
     },
     
     // Projects Section
@@ -152,25 +164,45 @@ export const TranslationProvider: React.FC<TranslationProviderProps> = ({ childr
       en: 'Successful Installations Across Africa', 
       zh: '遍及非洲的成功安装' 
     },
-    'projects.residential': { 
+    'projects.pageTitle': { 
+      en: 'Our Projects', 
+      zh: '我们的项目' 
+    },
+    'projects.pageDescription': { 
+      en: 'Discover our successful solar installations across Nigeria and beyond', 
+      zh: '了解我们在尼日利亚和其他地区的成功太阳能安装项目' 
+    },
+    'projects.categories.residential': { 
       en: 'Residential', 
       zh: '住宅' 
     },
-    'projects.commercial': { 
+    'projects.categories.commercial': { 
       en: 'Commercial', 
       zh: '商业' 
     },
-    'projects.industrial': { 
-      en: 'Industrial', 
-      zh: '工业' 
+    'projects.categories.agricultural': { 
+      en: 'Agricultural', 
+      zh: '农业' 
     },
-    'projects.viewCase': { 
-      en: 'View Case Study', 
-      zh: '查看案例研究' 
+    'projects.viewDetails': { 
+      en: 'View Details', 
+      zh: '查看详情' 
     },
-    'projects.viewAll': { 
-      en: 'View All Projects', 
-      zh: '查看所有项目' 
+    'projects.featuredTitle': { 
+      en: 'Featured Project', 
+      zh: '精选项目' 
+    },
+    'projects.ctaTitle': { 
+      en: 'Ready to Start Your Solar Project?', 
+      zh: '准备开始您的太阳能项目了吗？' 
+    },
+    'projects.ctaText': { 
+      en: 'Our team of experts is ready to help you design and implement a solar solution tailored to your specific needs.', 
+      zh: '我们的专家团队随时准备帮助您设计和实施针对您特定需求的太阳能解决方案。' 
+    },
+    'projects.ctaButton': { 
+      en: 'Contact Us Today', 
+      zh: '立即联系我们' 
     },
     
     // Contact Section

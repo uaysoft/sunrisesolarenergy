@@ -7,7 +7,7 @@ interface MapSectionProps {
 const MapSection = ({ src, title }: MapSectionProps) => {
   return (
     <div className="bg-white rounded-lg overflow-hidden shadow-soft hover:shadow-medium transition-all duration-300">
-      <div className="aspect-w-16 aspect-h-9 h-[400px]">
+      <div className="h-[400px] md:h-[500px] relative">
         <iframe 
           src={src}
           width="100%" 
@@ -17,7 +17,7 @@ const MapSection = ({ src, title }: MapSectionProps) => {
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
           title={title}
-          className="w-full h-full"
+          className="absolute inset-0 w-full h-full"
         />
       </div>
     </div>

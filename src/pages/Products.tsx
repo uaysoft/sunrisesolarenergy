@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useTranslationContext } from '../contexts/TranslationContext';
@@ -17,7 +18,7 @@ const Products = () => {
   const productCategories = [
     {
       id: "solar-panels",
-      name: t('products.categories.panels'),
+      name: "Solar Panels",
       items: [
         {
           name: "Monocrystalline Solar Panel",
@@ -41,7 +42,7 @@ const Products = () => {
     },
     {
       id: "batteries",
-      name: t('products.categories.batteries'),
+      name: "Energy Storage Batteries",
       items: [
         {
           name: "Lithium-Ion Battery",
@@ -59,7 +60,7 @@ const Products = () => {
     },
     {
       id: "inverters",
-      name: t('products.categories.inverters'),
+      name: "Inverters",
       items: [
         {
           name: "Grid-Tied Inverter",
@@ -83,7 +84,7 @@ const Products = () => {
     },
     {
       id: "pumps",
-      name: t('products.categories.pumps'),
+      name: "Solar Water Pumps",
       items: [
         {
           name: "Solar Water Pump System",
@@ -101,7 +102,7 @@ const Products = () => {
     },
     {
       id: "accessories",
-      name: t('products.categories.accessories'),
+      name: "Accessories",
       items: [
         {
           name: "Solar Panel Mounting System",
@@ -122,8 +123,8 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       <PageHero 
-        title={t('products.pageTitle')} 
-        description={t('products.pageDescription')}
+        title="Our Products" 
+        description="Explore our comprehensive range of high-quality solar energy products"
         bgColor="bg-gradient-to-b from-sunrise-50 to-white" 
       />
 
@@ -161,9 +162,9 @@ const Products = () => {
       </section>
 
       <CTASection 
-        title={t('products.ctaTitle')}
-        text={t('products.ctaText')}
-        buttonText={t('products.ctaButton')}
+        title="Ready to Transform Your Energy Supply?" 
+        text="Contact our team today to discuss how our solar products can meet your energy needs and help you save costs."
+        buttonText="Get a Quote"
         className="bg-gray-50"
       />
     </div>
